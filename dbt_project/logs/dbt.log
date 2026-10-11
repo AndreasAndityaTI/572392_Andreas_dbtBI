@@ -1,0 +1,1234 @@
+[0m14:52:33.396889 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5c8fcdee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5c941cbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5c941c910>]}
+
+
+============================== 14:52:33.400720 | f8b58c13-5ad3-4906-959d-a862bd591857 ==============================
+[0m14:52:33.400720 [info ] [MainThread]: Running with dbt=1.10.23
+[0m14:52:33.401243 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'version_check': 'True', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'write_json': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_path': 'dbt_project/logs', 'log_cache_events': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'fail_fast': 'False', 'invocation_command': 'dbt run --project-dir dbt_project --profiles-dir dbt_project', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'profiles_dir': 'dbt_project', 'use_experimental_parser': 'False', 'printer_width': '80', 'empty': 'False'}
+[0m14:52:33.401606 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m14:52:33.401916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5c8fcdee0>]}
+[0m14:52:33.619475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5c93f7700>]}
+[0m14:52:33.667487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5b94a0df0>]}
+[0m14:52:33.668929 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m14:52:33.771257 [debug] [MainThread]: checksum: 2b1352ea083ab2415ad0dbf54db2d1ac6054af1cb939f9d756e37438b9e9a7cf, vars: {}, profile: , target: , version: 1.10.23
+[0m14:52:33.772059 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:52:33.772432 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5c950cd30>]}
+[0m14:52:34.934563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5c97830d0>]}
+[0m14:52:35.059447 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:52:35.061195 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:52:35.071018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc598a6fdc0>]}
+[0m14:52:35.071450 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 439 macros
+[0m14:52:35.071759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5a83de250>]}
+[0m14:52:35.073003 [info ] [MainThread]: 
+[0m14:52:35.073324 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:52:35.073586 [info ] [MainThread]: 
+[0m14:52:35.073989 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m14:52:35.078219 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse'
+[0m14:52:35.112843 [debug] [ThreadPool]: Using duckdb connection "list_warehouse"
+[0m14:52:35.113228 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"warehouse"'
+    
+  
+  
+[0m14:52:35.113505 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:52:35.124649 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m14:52:35.126093 [debug] [ThreadPool]: On list_warehouse: Close
+[0m14:52:35.127588 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehouse, now create_warehouse_main)
+[0m14:52:35.128988 [debug] [ThreadPool]: Creating schema "database: "warehouse"
+schema: "main"
+"
+[0m14:52:35.134845 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:52:35.135143 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='warehouse'
+        and type='sqlite'
+    
+  
+[0m14:52:35.135397 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:52:35.140923 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m14:52:35.141931 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:52:35.142204 [debug] [ThreadPool]: On create_warehouse_main: BEGIN
+[0m14:52:35.142560 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:52:35.142807 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:52:35.143056 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+    
+        create schema if not exists "warehouse"."main"
+    
+[0m14:52:35.143720 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:52:35.144343 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m14:52:35.144597 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:52:35.144830 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m14:52:35.145149 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:52:35.145388 [debug] [ThreadPool]: On create_warehouse_main: Close
+[0m14:52:35.147389 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_warehouse_main, now list_warehouse_main)
+[0m14:52:35.151847 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:52:35.152121 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m14:52:35.152381 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:52:35.157079 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m14:52:35.157353 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:52:35.157622 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'warehouse'
+  
+[0m14:52:35.183329 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m14:52:35.184251 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m14:52:35.185064 [debug] [ThreadPool]: Failed to rollback 'list_warehouse_main'
+[0m14:52:35.185334 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m14:52:35.186861 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5a83de250>]}
+[0m14:52:35.187252 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:52:35.187497 [debug] [MainThread]: On master: BEGIN
+[0m14:52:35.187722 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:52:35.192448 [debug] [MainThread]: SQL status: OK in 0.005 seconds
+[0m14:52:35.192722 [debug] [MainThread]: On master: COMMIT
+[0m14:52:35.192970 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:52:35.193205 [debug] [MainThread]: On master: COMMIT
+[0m14:52:35.193525 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:52:35.193766 [debug] [MainThread]: On master: Close
+[0m14:52:35.196040 [debug] [Thread-1  ]: Began running node model.dbt_tugas.stg_superstore
+[0m14:52:35.196466 [info ] [Thread-1  ]: 1 of 3 START sql view model main.stg_superstore ................................ [RUN]
+[0m14:52:35.196851 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_warehouse_main, now model.dbt_tugas.stg_superstore)
+[0m14:52:35.197157 [debug] [Thread-1  ]: Began compiling node model.dbt_tugas.stg_superstore
+[0m14:52:35.204429 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_tugas.stg_superstore"
+[0m14:52:35.205203 [debug] [Thread-1  ]: Began executing node model.dbt_tugas.stg_superstore
+[0m14:52:35.231055 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_tugas.stg_superstore"
+[0m14:52:35.231932 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.stg_superstore"
+[0m14:52:35.232251 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: BEGIN
+[0m14:52:35.232539 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:52:35.237732 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:52:35.238084 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.stg_superstore"
+[0m14:52:35.238468 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.stg_superstore"} */
+
+  
+  create view "warehouse"."main"."stg_superstore__dbt_tmp" as (
+    with source as (
+    select *
+    from "main"."raw"."superstore"
+),
+cleaned as (
+    select
+        cast("Row ID" as bigint) as row_id,
+        trim("Order ID") as order_id,
+        try_cast("Order Date" as date) as order_date,
+        try_cast("Ship Date" as date) as ship_date,
+        trim("Customer ID") as customer_id,
+        trim("Customer Name") as customer_name,
+        trim("Segment") as segment,
+        trim("Country") as country,
+        trim("City") as city,
+        trim("State") as state,
+        nullif(trim(cast("Postal Code" as varchar)), '') as postal_code,
+        trim("Region") as region,
+        trim("Product ID") as product_id,
+        trim("Category") as category,
+        trim("Sub-Category") as sub_category,
+        trim("Product Name") as product_name,
+        cast("Sales" as numeric(18,2)) as sales,
+        cast("Quantity" as integer) as quantity,
+        cast("Discount" as numeric(18,2)) as discount,
+        cast("Profit" as numeric(18,2)) as profit,
+        concat(trim("Order ID"), '|', trim("Product ID")) as order_product_key
+    from source
+),
+deduped as (
+    select *,
+           row_number() over (
+               partition by order_id, product_id
+               order by order_date desc, row_id desc
+           ) as row_num
+    from cleaned
+)
+select
+    row_id,
+    order_id,
+    order_date,
+    ship_date,
+    customer_id,
+    customer_name,
+    segment,
+    country,
+    city,
+    state,
+    postal_code,
+    region,
+    product_id,
+    category,
+    sub_category,
+    product_name,
+    sales,
+    quantity,
+    discount,
+    profit,
+    order_product_key
+from deduped
+where row_num = 1
+  );
+
+[0m14:52:35.243638 [debug] [Thread-1  ]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.stg_superstore"} */
+
+  
+  create view "warehouse"."main"."stg_superstore__dbt_tmp" as (
+    with source as (
+    select *
+    from "main"."raw"."superstore"
+),
+cleaned as (
+    select
+        cast("Row ID" as bigint) as row_id,
+        trim("Order ID") as order_id,
+        try_cast("Order Date" as date) as order_date,
+        try_cast("Ship Date" as date) as ship_date,
+        trim("Customer ID") as customer_id,
+        trim("Customer Name") as customer_name,
+        trim("Segment") as segment,
+        trim("Country") as country,
+        trim("City") as city,
+        trim("State") as state,
+        nullif(trim(cast("Postal Code" as varchar)), '') as postal_code,
+        trim("Region") as region,
+        trim("Product ID") as product_id,
+        trim("Category") as category,
+        trim("Sub-Category") as sub_category,
+        trim("Product Name") as product_name,
+        cast("Sales" as numeric(18,2)) as sales,
+        cast("Quantity" as integer) as quantity,
+        cast("Discount" as numeric(18,2)) as discount,
+        cast("Profit" as numeric(18,2)) as profit,
+        concat(trim("Order ID"), '|', trim("Product ID")) as order_product_key
+    from source
+),
+deduped as (
+    select *,
+           row_number() over (
+               partition by order_id, product_id
+               order by order_date desc, row_id desc
+           ) as row_num
+    from cleaned
+)
+select
+    row_id,
+    order_id,
+    order_date,
+    ship_date,
+    customer_id,
+    customer_name,
+    segment,
+    country,
+    city,
+    state,
+    postal_code,
+    region,
+    product_id,
+    category,
+    sub_category,
+    product_name,
+    sales,
+    quantity,
+    discount,
+    profit,
+    order_product_key
+from deduped
+where row_num = 1
+  );
+
+[0m14:52:35.244047 [debug] [Thread-1  ]: DuckDB adapter: Rolling back transaction.
+[0m14:52:35.244475 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: ROLLBACK
+[0m14:52:35.249735 [debug] [Thread-1  ]: Failed to rollback 'model.dbt_tugas.stg_superstore'
+[0m14:52:35.250052 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: Close
+[0m14:52:35.251676 [debug] [Thread-1  ]: Runtime Error in model stg_superstore (models/staging/stg_superstore.sql)
+  Binder Error: Catalog "main" does not exist!
+[0m14:52:35.253275 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f8b58c13-5ad3-4906-959d-a862bd591857', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc598a16130>]}
+[0m14:52:35.253835 [error] [Thread-1  ]: 1 of 3 ERROR creating sql view model main.stg_superstore ....................... [[31mERROR[0m in 0.06s]
+[0m14:52:35.254335 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.stg_superstore
+[0m14:52:35.254769 [debug] [Thread-4  ]: Marking all children of 'model.dbt_tugas.stg_superstore' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_superstore (models/staging/stg_superstore.sql)
+  Binder Error: Catalog "main" does not exist!.
+[0m14:52:35.255354 [debug] [Thread-1  ]: Began running node model.dbt_tugas.mart_daily_sales
+[0m14:52:35.255775 [info ] [Thread-1  ]: 2 of 3 SKIP relation main.mart_daily_sales ..................................... [[33mSKIP[0m]
+[0m14:52:35.256191 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.mart_daily_sales
+[0m14:52:35.256523 [debug] [Thread-1  ]: Began running node model.dbt_tugas.mart_region_sales
+[0m14:52:35.256859 [info ] [Thread-1  ]: 3 of 3 SKIP relation main.mart_region_sales .................................... [[33mSKIP[0m]
+[0m14:52:35.257198 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.mart_region_sales
+[0m14:52:35.257873 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:52:35.258136 [debug] [MainThread]: On master: BEGIN
+[0m14:52:35.258381 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:52:35.273043 [debug] [MainThread]: SQL status: OK in 0.014 seconds
+[0m14:52:35.278051 [debug] [MainThread]: On master: COMMIT
+[0m14:52:35.278432 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:52:35.278729 [debug] [MainThread]: On master: COMMIT
+[0m14:52:35.285246 [debug] [MainThread]: SQL status: OK in 0.006 seconds
+[0m14:52:35.285678 [debug] [MainThread]: On master: Close
+[0m14:52:35.287101 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:52:35.287415 [debug] [MainThread]: Connection 'model.dbt_tugas.stg_superstore' was properly closed.
+[0m14:52:35.289272 [info ] [MainThread]: 
+[0m14:52:35.289754 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 0.21 seconds (0.21s).
+[0m14:52:35.290914 [debug] [MainThread]: Command end result
+[0m14:52:35.315083 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:52:35.316618 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:52:35.321981 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_project/target/run_results.json
+[0m14:52:35.322282 [info ] [MainThread]: 
+[0m14:52:35.322608 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m14:52:35.322892 [info ] [MainThread]: 
+[0m14:52:35.323221 [error] [MainThread]: [31mFailure in model stg_superstore (models/staging/stg_superstore.sql)[0m
+[0m14:52:35.323543 [error] [MainThread]:   Runtime Error in model stg_superstore (models/staging/stg_superstore.sql)
+  Binder Error: Catalog "main" does not exist!
+[0m14:52:35.323793 [info ] [MainThread]: 
+[0m14:52:35.324093 [info ] [MainThread]:   compiled code at target/compiled/dbt_tugas/models/staging/stg_superstore.sql
+[0m14:52:35.324343 [info ] [MainThread]: 
+[0m14:52:35.324627 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=2 NO-OP=0 TOTAL=3
+[0m14:52:35.326402 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.0064304, "process_in_blocks": "0", "process_kernel_time": 0.197702, "process_mem_max_rss": "148713472", "process_out_blocks": "0", "process_user_time": 2.79382}
+[0m14:52:35.326775 [debug] [MainThread]: Command `dbt run` failed at 14:52:35.326705 after 2.01 seconds
+[0m14:52:35.327120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5c8fcdee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5989e06a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc5989e0670>]}
+[0m14:52:35.327472 [debug] [MainThread]: Flushing usage events
+[0m14:52:36.555812 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:54:05.395118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febd9b6dee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febda7f4be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febda7f4910>]}
+
+
+============================== 14:54:05.399536 | f7ff1204-b2e1-491f-9f21-b3112de2de0f ==============================
+[0m14:54:05.399536 [info ] [MainThread]: Running with dbt=1.10.23
+[0m14:54:05.400055 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'log_format': 'default', 'debug': 'False', 'introspect': 'True', 'use_colors': 'True', 'target_path': 'None', 'static_parser': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'empty': 'False', 'log_path': 'dbt_project/logs', 'fail_fast': 'False', 'log_cache_events': 'False', 'profiles_dir': 'dbt_project', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'quiet': 'False', 'printer_width': '80', 'partial_parse': 'True', 'invocation_command': 'dbt run --project-dir dbt_project --profiles-dir dbt_project'}
+[0m14:54:05.400433 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m14:54:05.400761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febd9b6dee0>]}
+[0m14:54:05.717304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febda7cf700>]}
+[0m14:54:05.765239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febda050df0>]}
+[0m14:54:05.767448 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m14:54:05.866416 [debug] [MainThread]: checksum: 2b1352ea083ab2415ad0dbf54db2d1ac6054af1cb939f9d756e37438b9e9a7cf, vars: {}, profile: , target: , version: 1.10.23
+[0m14:54:06.012165 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:54:06.012779 [info ] [MainThread]: Unable to do partial parsing because an error occurred. Switching to full reparse.
+[0m14:54:06.014249 [debug] [MainThread]: Partial parsing exception processing file dbt_tugas://models/staging/schema.yml
+[0m14:54:06.014743 [debug] [MainThread]: PP exception info: {'traceback': 'Traceback (most recent call last):\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/manifest.py", line 545, in safe_update_project_parser_files_partially\n    project_parser_files = self.partial_parser.get_parsing_files()\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 188, in get_parsing_files\n    self.change_schema_file(file_id)\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 642, in change_schema_file\n    self.handle_schema_file_changes(saved_schema_file, saved_yaml_dict, new_yaml_dict)\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 710, in handle_schema_file_changes\n    self.delete_schema_source(schema_file, source)\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 951, in delete_schema_source\n    self.schedule_referencing_nodes_for_parsing(unique_id)\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 422, in schedule_referencing_nodes_for_parsing\n    self.schedule_nodes_for_parsing(self.saved_manifest.child_map[unique_id])\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 434, in schedule_nodes_for_parsing\n    self.remove_mssat_file(source_file)\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 415, in remove_mssat_file\n    self.remove_node_in_saved(source_file, unique_id)\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 376, in remove_node_in_saved\n    self.delete_schema_mssa_links(schema_file, dict_key, elem_patch)\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 852, in delete_schema_mssa_links\n    self._delete_schema_mssa_links(schema_file, dict_key, elem, elem_unique_ids)\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 905, in _delete_schema_mssa_links\n    self.remove_tests(schema_file, dict_key, elem["name"])\n  File "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/lib/python3.9/site-packages/dbt/parser/partial.py", line 920, in remove_tests\n    if child_test.attached_node:\nAttributeError: \'SingularTestNode\' object has no attribute \'attached_node\'\n', 'exception': "AttributeError: 'SingularTestNode' object has no attribute 'attached_node'", 'code': 'if child_test.attached_node:', 'parse_file_type': 'schema', 'location': 'line 920 in remove_tests'}
+[0m14:54:06.015195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febda9003d0>]}
+[0m14:54:07.131979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febc82a4070>]}
+[0m14:54:07.222866 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:54:07.224579 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:54:07.237029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febda8d7c40>]}
+[0m14:54:07.237453 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 439 macros
+[0m14:54:07.237763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feba8159850>]}
+[0m14:54:07.238948 [info ] [MainThread]: 
+[0m14:54:07.239244 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:54:07.239504 [info ] [MainThread]: 
+[0m14:54:07.239906 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m14:54:07.244134 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse'
+[0m14:54:07.282730 [debug] [ThreadPool]: Using duckdb connection "list_warehouse"
+[0m14:54:07.283103 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"warehouse"'
+    
+  
+  
+[0m14:54:07.283374 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:54:07.316103 [debug] [ThreadPool]: SQL status: OK in 0.032 seconds
+[0m14:54:07.318249 [debug] [ThreadPool]: On list_warehouse: Close
+[0m14:54:07.320523 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehouse, now create_warehouse_main)
+[0m14:54:07.321321 [debug] [ThreadPool]: Creating schema "database: "warehouse"
+schema: "main"
+"
+[0m14:54:07.326945 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:54:07.327233 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='warehouse'
+        and type='sqlite'
+    
+  
+[0m14:54:07.327482 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:54:07.333628 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m14:54:07.334762 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:54:07.335023 [debug] [ThreadPool]: On create_warehouse_main: BEGIN
+[0m14:54:07.335375 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:54:07.335632 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:54:07.335893 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+    
+        create schema if not exists "warehouse"."main"
+    
+[0m14:54:07.337335 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m14:54:07.338029 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m14:54:07.338313 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:54:07.338568 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m14:54:07.338901 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:54:07.339158 [debug] [ThreadPool]: On create_warehouse_main: Close
+[0m14:54:07.340828 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_warehouse_main, now list_warehouse_main)
+[0m14:54:07.345319 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:54:07.345598 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m14:54:07.345837 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:54:07.350642 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m14:54:07.350927 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:54:07.351204 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'warehouse'
+  
+[0m14:54:07.383845 [debug] [ThreadPool]: SQL status: OK in 0.032 seconds
+[0m14:54:07.384915 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m14:54:07.385696 [debug] [ThreadPool]: Failed to rollback 'list_warehouse_main'
+[0m14:54:07.385958 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m14:54:07.387485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febc81c8c10>]}
+[0m14:54:07.387863 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:54:07.388178 [debug] [MainThread]: On master: BEGIN
+[0m14:54:07.388449 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:54:07.393075 [debug] [MainThread]: SQL status: OK in 0.005 seconds
+[0m14:54:07.393368 [debug] [MainThread]: On master: COMMIT
+[0m14:54:07.393629 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:54:07.393872 [debug] [MainThread]: On master: COMMIT
+[0m14:54:07.394201 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:54:07.394456 [debug] [MainThread]: On master: Close
+[0m14:54:07.397054 [debug] [Thread-1  ]: Began running node model.dbt_tugas.stg_superstore
+[0m14:54:07.397476 [info ] [Thread-1  ]: 1 of 3 START sql view model main.stg_superstore ................................ [RUN]
+[0m14:54:07.397849 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_warehouse_main, now model.dbt_tugas.stg_superstore)
+[0m14:54:07.398152 [debug] [Thread-1  ]: Began compiling node model.dbt_tugas.stg_superstore
+[0m14:54:07.405399 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_tugas.stg_superstore"
+[0m14:54:07.405929 [debug] [Thread-1  ]: Began executing node model.dbt_tugas.stg_superstore
+[0m14:54:07.432236 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_tugas.stg_superstore"
+[0m14:54:07.432829 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.stg_superstore"
+[0m14:54:07.433137 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: BEGIN
+[0m14:54:07.433419 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:07.438461 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:07.438803 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.stg_superstore"
+[0m14:54:07.439196 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.stg_superstore"} */
+
+  
+  create view "warehouse"."main"."stg_superstore__dbt_tmp" as (
+    with source as (
+    select *
+    from "warehouse"."raw"."superstore"
+),
+cleaned as (
+    select
+        cast("Row ID" as bigint) as row_id,
+        trim("Order ID") as order_id,
+        try_cast("Order Date" as date) as order_date,
+        try_cast("Ship Date" as date) as ship_date,
+        trim("Customer ID") as customer_id,
+        trim("Customer Name") as customer_name,
+        trim("Segment") as segment,
+        trim("Country") as country,
+        trim("City") as city,
+        trim("State") as state,
+        nullif(trim(cast("Postal Code" as varchar)), '') as postal_code,
+        trim("Region") as region,
+        trim("Product ID") as product_id,
+        trim("Category") as category,
+        trim("Sub-Category") as sub_category,
+        trim("Product Name") as product_name,
+        cast("Sales" as numeric(18,2)) as sales,
+        cast("Quantity" as integer) as quantity,
+        cast("Discount" as numeric(18,2)) as discount,
+        cast("Profit" as numeric(18,2)) as profit,
+        concat(trim("Order ID"), '|', trim("Product ID")) as order_product_key
+    from source
+),
+deduped as (
+    select *,
+           row_number() over (
+               partition by order_id, product_id
+               order by order_date desc, row_id desc
+           ) as row_num
+    from cleaned
+)
+select
+    row_id,
+    order_id,
+    order_date,
+    ship_date,
+    customer_id,
+    customer_name,
+    segment,
+    country,
+    city,
+    state,
+    postal_code,
+    region,
+    product_id,
+    category,
+    sub_category,
+    product_name,
+    sales,
+    quantity,
+    discount,
+    profit,
+    order_product_key
+from deduped
+where row_num = 1
+  );
+
+[0m14:54:07.441543 [debug] [Thread-1  ]: SQL status: OK in 0.002 seconds
+[0m14:54:07.446724 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.stg_superstore"
+[0m14:54:07.447071 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.stg_superstore"} */
+alter view "warehouse"."main"."stg_superstore__dbt_tmp" rename to "stg_superstore"
+[0m14:54:07.448362 [debug] [Thread-1  ]: SQL status: OK in 0.001 seconds
+[0m14:54:07.460378 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: COMMIT
+[0m14:54:07.460710 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.stg_superstore"
+[0m14:54:07.461001 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: COMMIT
+[0m14:54:07.463316 [debug] [Thread-1  ]: SQL status: OK in 0.002 seconds
+[0m14:54:07.467434 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.stg_superstore"
+[0m14:54:07.467754 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.stg_superstore"} */
+drop view if exists "warehouse"."main"."stg_superstore__dbt_backup" cascade
+[0m14:54:07.469174 [debug] [Thread-1  ]: SQL status: OK in 0.001 seconds
+[0m14:54:07.471067 [debug] [Thread-1  ]: On model.dbt_tugas.stg_superstore: Close
+[0m14:54:07.479924 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febd8b29310>]}
+[0m14:54:07.480446 [info ] [Thread-1  ]: 1 of 3 OK created sql view model main.stg_superstore ........................... [[32mOK[0m in 0.08s]
+[0m14:54:07.480936 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.stg_superstore
+[0m14:54:07.481526 [debug] [Thread-1  ]: Began running node model.dbt_tugas.mart_daily_sales
+[0m14:54:07.481944 [info ] [Thread-1  ]: 2 of 3 START sql table model main.mart_daily_sales ............................. [RUN]
+[0m14:54:07.482310 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_tugas.stg_superstore, now model.dbt_tugas.mart_daily_sales)
+[0m14:54:07.482602 [debug] [Thread-1  ]: Began compiling node model.dbt_tugas.mart_daily_sales
+[0m14:54:07.484884 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_tugas.mart_daily_sales"
+[0m14:54:07.485448 [debug] [Thread-1  ]: Began executing node model.dbt_tugas.mart_daily_sales
+[0m14:54:07.502113 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_tugas.mart_daily_sales"
+[0m14:54:07.502792 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_daily_sales"
+[0m14:54:07.503103 [debug] [Thread-1  ]: On model.dbt_tugas.mart_daily_sales: BEGIN
+[0m14:54:07.503385 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:07.509273 [debug] [Thread-1  ]: SQL status: OK in 0.006 seconds
+[0m14:54:07.509605 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_daily_sales"
+[0m14:54:07.509920 [debug] [Thread-1  ]: On model.dbt_tugas.mart_daily_sales: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.mart_daily_sales"} */
+
+  
+    
+    
+
+    create  table
+      "warehouse"."main"."mart_daily_sales__dbt_tmp"
+  
+    as (
+      with daily_sales as (
+    select
+        order_date,
+        count(distinct order_id) as order_count,
+        count(*) as line_count,
+        sum(sales) as total_sales,
+        sum(profit) as total_profit,
+        sum(quantity) as total_quantity,
+        avg(discount) as avg_discount
+    from "warehouse"."main"."stg_superstore"
+    where order_date is not null
+    group by order_date
+)
+select *
+from daily_sales
+order by order_date
+    );
+  
+  
+[0m14:54:07.541723 [debug] [Thread-1  ]: SQL status: OK in 0.031 seconds
+[0m14:54:07.545282 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_daily_sales"
+[0m14:54:07.545617 [debug] [Thread-1  ]: On model.dbt_tugas.mart_daily_sales: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.mart_daily_sales"} */
+alter table "warehouse"."main"."mart_daily_sales__dbt_tmp" rename to "mart_daily_sales"
+[0m14:54:07.546505 [debug] [Thread-1  ]: SQL status: OK in 0.001 seconds
+[0m14:54:07.550439 [debug] [Thread-1  ]: On model.dbt_tugas.mart_daily_sales: COMMIT
+[0m14:54:07.550760 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_daily_sales"
+[0m14:54:07.551041 [debug] [Thread-1  ]: On model.dbt_tugas.mart_daily_sales: COMMIT
+[0m14:54:07.552406 [debug] [Thread-1  ]: SQL status: OK in 0.001 seconds
+[0m14:54:07.554513 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_daily_sales"
+[0m14:54:07.554850 [debug] [Thread-1  ]: On model.dbt_tugas.mart_daily_sales: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.mart_daily_sales"} */
+drop table if exists "warehouse"."main"."mart_daily_sales__dbt_backup" cascade
+[0m14:54:07.555308 [debug] [Thread-1  ]: SQL status: OK in 0.000 seconds
+[0m14:54:07.556275 [debug] [Thread-1  ]: On model.dbt_tugas.mart_daily_sales: Close
+[0m14:54:07.565031 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febb8e26f10>]}
+[0m14:54:07.565612 [info ] [Thread-1  ]: 2 of 3 OK created sql table model main.mart_daily_sales ........................ [[32mOK[0m in 0.08s]
+[0m14:54:07.566113 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.mart_daily_sales
+[0m14:54:07.566452 [debug] [Thread-1  ]: Began running node model.dbt_tugas.mart_region_sales
+[0m14:54:07.566918 [info ] [Thread-1  ]: 3 of 3 START sql table model main.mart_region_sales ............................ [RUN]
+[0m14:54:07.567324 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_tugas.mart_daily_sales, now model.dbt_tugas.mart_region_sales)
+[0m14:54:07.567639 [debug] [Thread-1  ]: Began compiling node model.dbt_tugas.mart_region_sales
+[0m14:54:07.569993 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_tugas.mart_region_sales"
+[0m14:54:07.570508 [debug] [Thread-1  ]: Began executing node model.dbt_tugas.mart_region_sales
+[0m14:54:07.573631 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_tugas.mart_region_sales"
+[0m14:54:07.574154 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_region_sales"
+[0m14:54:07.574450 [debug] [Thread-1  ]: On model.dbt_tugas.mart_region_sales: BEGIN
+[0m14:54:07.574727 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:07.580035 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:07.580377 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_region_sales"
+[0m14:54:07.580713 [debug] [Thread-1  ]: On model.dbt_tugas.mart_region_sales: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.mart_region_sales"} */
+
+  
+    
+    
+
+    create  table
+      "warehouse"."main"."mart_region_sales__dbt_tmp"
+  
+    as (
+      with regional_summary as (
+    select
+        region,
+        count(distinct order_id) as order_count,
+        sum(sales) as total_sales,
+        sum(profit) as total_profit,
+        avg(discount) as avg_discount,
+        count(*) as line_count
+    from "warehouse"."main"."stg_superstore"
+    where region is not null
+    group by region
+)
+select *
+from regional_summary
+order by total_sales desc
+    );
+  
+  
+[0m14:54:07.592964 [debug] [Thread-1  ]: SQL status: OK in 0.012 seconds
+[0m14:54:07.595746 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_region_sales"
+[0m14:54:07.596063 [debug] [Thread-1  ]: On model.dbt_tugas.mart_region_sales: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.mart_region_sales"} */
+alter table "warehouse"."main"."mart_region_sales__dbt_tmp" rename to "mart_region_sales"
+[0m14:54:07.596592 [debug] [Thread-1  ]: SQL status: OK in 0.000 seconds
+[0m14:54:07.597862 [debug] [Thread-1  ]: On model.dbt_tugas.mart_region_sales: COMMIT
+[0m14:54:07.598170 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_region_sales"
+[0m14:54:07.598449 [debug] [Thread-1  ]: On model.dbt_tugas.mart_region_sales: COMMIT
+[0m14:54:07.599197 [debug] [Thread-1  ]: SQL status: OK in 0.000 seconds
+[0m14:54:07.601300 [debug] [Thread-1  ]: Using duckdb connection "model.dbt_tugas.mart_region_sales"
+[0m14:54:07.601604 [debug] [Thread-1  ]: On model.dbt_tugas.mart_region_sales: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "model.dbt_tugas.mart_region_sales"} */
+drop table if exists "warehouse"."main"."mart_region_sales__dbt_backup" cascade
+[0m14:54:07.602029 [debug] [Thread-1  ]: SQL status: OK in 0.000 seconds
+[0m14:54:07.603007 [debug] [Thread-1  ]: On model.dbt_tugas.mart_region_sales: Close
+[0m14:54:07.610378 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f7ff1204-b2e1-491f-9f21-b3112de2de0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feba8397160>]}
+[0m14:54:07.610928 [info ] [Thread-1  ]: 3 of 3 OK created sql table model main.mart_region_sales ....................... [[32mOK[0m in 0.04s]
+[0m14:54:07.611417 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.mart_region_sales
+[0m14:54:07.612205 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:54:07.612461 [debug] [MainThread]: On master: BEGIN
+[0m14:54:07.612682 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:54:07.617759 [debug] [MainThread]: SQL status: OK in 0.005 seconds
+[0m14:54:07.618059 [debug] [MainThread]: On master: COMMIT
+[0m14:54:07.618320 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:54:07.618558 [debug] [MainThread]: On master: COMMIT
+[0m14:54:07.618924 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:54:07.619183 [debug] [MainThread]: On master: Close
+[0m14:54:07.620237 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:54:07.620503 [debug] [MainThread]: Connection 'model.dbt_tugas.mart_region_sales' was properly closed.
+[0m14:54:07.620873 [info ] [MainThread]: 
+[0m14:54:07.621162 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 0.38 seconds (0.38s).
+[0m14:54:07.621948 [debug] [MainThread]: Command end result
+[0m14:54:07.642897 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:54:07.644252 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:54:07.649512 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_project/target/run_results.json
+[0m14:54:07.649793 [info ] [MainThread]: 
+[0m14:54:07.650117 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:54:07.650384 [info ] [MainThread]: 
+[0m14:54:07.650680 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m14:54:07.653187 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.3372488, "process_in_blocks": "0", "process_kernel_time": 0.247514, "process_mem_max_rss": "202989568", "process_out_blocks": "0", "process_user_time": 3.015183}
+[0m14:54:07.653545 [debug] [MainThread]: Command `dbt run` succeeded at 14:54:07.653478 after 2.34 seconds
+[0m14:54:07.653856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febd9b6dee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febb8b26070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7febb8b26520>]}
+[0m14:54:07.654188 [debug] [MainThread]: Flushing usage events
+[0m14:54:15.473961 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:54:26.772317 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe570c05eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe55038da30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe55038d760>]}
+
+
+============================== 14:54:26.776515 | cbca1084-05e7-4906-818b-5a4ca8e656a1 ==============================
+[0m14:54:26.776515 [info ] [MainThread]: Running with dbt=1.10.23
+[0m14:54:26.777032 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'partial_parse': 'True', 'empty': 'None', 'static_parser': 'True', 'profiles_dir': 'dbt_project', 'use_experimental_parser': 'False', 'printer_width': '80', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_path': 'dbt_project/logs', 'log_format': 'default', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'version_check': 'True', 'target_path': 'None', 'warn_error': 'None', 'debug': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt test --project-dir dbt_project --profiles-dir dbt_project'}
+[0m14:54:26.777418 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m14:54:26.777732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': 'cbca1084-05e7-4906-818b-5a4ca8e656a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe570c05eb0>]}
+[0m14:54:27.101855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cbca1084-05e7-4906-818b-5a4ca8e656a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe571a68670>]}
+[0m14:54:27.149980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cbca1084-05e7-4906-818b-5a4ca8e656a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe571a7d100>]}
+[0m14:54:27.152490 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m14:54:27.250127 [debug] [MainThread]: checksum: 2b1352ea083ab2415ad0dbf54db2d1ac6054af1cb939f9d756e37438b9e9a7cf, vars: {}, profile: , target: , version: 1.10.23
+[0m14:54:27.393557 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:54:27.393898 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:54:27.446507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cbca1084-05e7-4906-818b-5a4ca8e656a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe581956f70>]}
+[0m14:54:27.542807 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:54:27.544573 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:54:27.563989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cbca1084-05e7-4906-818b-5a4ca8e656a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe571c6df70>]}
+[0m14:54:27.564423 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 439 macros
+[0m14:54:27.564740 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cbca1084-05e7-4906-818b-5a4ca8e656a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe581956190>]}
+[0m14:54:27.566119 [info ] [MainThread]: 
+[0m14:54:27.566436 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:54:27.566700 [info ] [MainThread]: 
+[0m14:54:27.567114 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m14:54:27.571614 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse_main'
+[0m14:54:27.644805 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:54:27.645182 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m14:54:27.645491 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:54:27.665827 [debug] [ThreadPool]: SQL status: OK in 0.020 seconds
+[0m14:54:27.666177 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:54:27.666452 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'warehouse'
+  
+[0m14:54:27.722955 [debug] [ThreadPool]: SQL status: OK in 0.056 seconds
+[0m14:54:27.725938 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m14:54:27.726862 [debug] [ThreadPool]: Failed to rollback 'list_warehouse_main'
+[0m14:54:27.727160 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m14:54:27.730842 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cbca1084-05e7-4906-818b-5a4ca8e656a1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe58163e8e0>]}
+[0m14:54:27.731285 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:54:27.731535 [debug] [MainThread]: On master: BEGIN
+[0m14:54:27.731763 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:54:27.742619 [debug] [MainThread]: SQL status: OK in 0.011 seconds
+[0m14:54:27.742936 [debug] [MainThread]: On master: COMMIT
+[0m14:54:27.743199 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:54:27.743440 [debug] [MainThread]: On master: COMMIT
+[0m14:54:27.743777 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:54:27.744041 [debug] [MainThread]: On master: Close
+[0m14:54:27.746724 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5
+[0m14:54:27.747060 [info ] [Thread-1  ]: 1 of 7 START test not_null_mart_daily_sales_order_date ......................... [RUN]
+[0m14:54:27.747436 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_warehouse_main, now test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5)
+[0m14:54:27.747730 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5
+[0m14:54:27.762561 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5"
+[0m14:54:27.763241 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5
+[0m14:54:27.777738 [debug] [Thread-1  ]: Writing runtime sql for node "test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5"
+[0m14:54:27.778425 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5"
+[0m14:54:27.778738 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5: BEGIN
+[0m14:54:27.779025 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:27.784196 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:27.784536 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5"
+[0m14:54:27.784852 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_date
+from "warehouse"."main"."mart_daily_sales"
+where order_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:54:27.789693 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:27.793275 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5: ROLLBACK
+[0m14:54:27.793664 [debug] [Thread-1  ]: Failed to rollback 'test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5'
+[0m14:54:27.793959 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5: Close
+[0m14:54:27.795167 [info ] [Thread-1  ]: 1 of 7 PASS not_null_mart_daily_sales_order_date ............................... [[32mPASS[0m in 0.05s]
+[0m14:54:27.795704 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5
+[0m14:54:27.796048 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1
+[0m14:54:27.796414 [info ] [Thread-1  ]: 2 of 7 START test not_null_mart_region_sales_region ............................ [RUN]
+[0m14:54:27.796794 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5, now test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1)
+[0m14:54:27.797095 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1
+[0m14:54:27.800420 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1"
+[0m14:54:27.800959 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1
+[0m14:54:27.803915 [debug] [Thread-1  ]: Writing runtime sql for node "test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1"
+[0m14:54:27.804395 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1"
+[0m14:54:27.804690 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1: BEGIN
+[0m14:54:27.804982 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:27.810466 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:27.810809 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1"
+[0m14:54:27.811122 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select region
+from "warehouse"."main"."mart_region_sales"
+where region is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:54:27.811828 [debug] [Thread-1  ]: SQL status: OK in 0.000 seconds
+[0m14:54:27.812951 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1: ROLLBACK
+[0m14:54:27.813300 [debug] [Thread-1  ]: Failed to rollback 'test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1'
+[0m14:54:27.813595 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1: Close
+[0m14:54:27.814768 [info ] [Thread-1  ]: 2 of 7 PASS not_null_mart_region_sales_region .................................. [[32mPASS[0m in 0.02s]
+[0m14:54:27.815256 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1
+[0m14:54:27.815588 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba
+[0m14:54:27.815954 [info ] [Thread-1  ]: 3 of 7 START test not_null_stg_superstore_order_date ........................... [RUN]
+[0m14:54:27.816335 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1, now test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba)
+[0m14:54:27.816643 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba
+[0m14:54:27.819994 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba"
+[0m14:54:27.820575 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba
+[0m14:54:27.822919 [debug] [Thread-1  ]: Writing runtime sql for node "test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba"
+[0m14:54:27.823464 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba"
+[0m14:54:27.823759 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba: BEGIN
+[0m14:54:27.824030 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:27.829029 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:27.829374 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba"
+[0m14:54:27.829682 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_date
+from "warehouse"."main"."stg_superstore"
+where order_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:54:27.851301 [debug] [Thread-1  ]: SQL status: OK in 0.021 seconds
+[0m14:54:27.852940 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba: ROLLBACK
+[0m14:54:27.853352 [debug] [Thread-1  ]: Failed to rollback 'test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba'
+[0m14:54:27.853649 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba: Close
+[0m14:54:27.854893 [info ] [Thread-1  ]: 3 of 7 PASS not_null_stg_superstore_order_date ................................. [[32mPASS[0m in 0.04s]
+[0m14:54:27.855489 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba
+[0m14:54:27.855881 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b
+[0m14:54:27.856293 [info ] [Thread-1  ]: 4 of 7 START test not_null_stg_superstore_order_id ............................. [RUN]
+[0m14:54:27.856734 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba, now test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b)
+[0m14:54:27.857045 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b
+[0m14:54:27.860626 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b"
+[0m14:54:27.861237 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b
+[0m14:54:27.863553 [debug] [Thread-1  ]: Writing runtime sql for node "test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b"
+[0m14:54:27.864067 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b"
+[0m14:54:27.864361 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b: BEGIN
+[0m14:54:27.864632 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:27.869855 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:27.870181 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b"
+[0m14:54:27.870486 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from "warehouse"."main"."stg_superstore"
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:54:27.873244 [debug] [Thread-1  ]: SQL status: OK in 0.002 seconds
+[0m14:54:27.874578 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b: ROLLBACK
+[0m14:54:27.874978 [debug] [Thread-1  ]: Failed to rollback 'test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b'
+[0m14:54:27.875267 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b: Close
+[0m14:54:27.876469 [info ] [Thread-1  ]: 4 of 7 PASS not_null_stg_superstore_order_id ................................... [[32mPASS[0m in 0.02s]
+[0m14:54:27.876944 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b
+[0m14:54:27.877258 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e
+[0m14:54:27.877639 [info ] [Thread-1  ]: 5 of 7 START test not_null_stg_superstore_row_id ............................... [RUN]
+[0m14:54:27.878058 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b, now test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e)
+[0m14:54:27.878363 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e
+[0m14:54:27.881756 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e"
+[0m14:54:27.882293 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e
+[0m14:54:27.884673 [debug] [Thread-1  ]: Writing runtime sql for node "test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e"
+[0m14:54:27.885212 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e"
+[0m14:54:27.885501 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e: BEGIN
+[0m14:54:27.885771 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:27.891020 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:27.891360 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e"
+[0m14:54:27.891695 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select row_id
+from "warehouse"."main"."stg_superstore"
+where row_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:54:27.893126 [debug] [Thread-1  ]: SQL status: OK in 0.001 seconds
+[0m14:54:27.894315 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e: ROLLBACK
+[0m14:54:27.894677 [debug] [Thread-1  ]: Failed to rollback 'test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e'
+[0m14:54:27.894976 [debug] [Thread-1  ]: On test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e: Close
+[0m14:54:27.896198 [info ] [Thread-1  ]: 5 of 7 PASS not_null_stg_superstore_row_id ..................................... [[32mPASS[0m in 0.02s]
+[0m14:54:27.896705 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e
+[0m14:54:27.897047 [debug] [Thread-1  ]: Began running node test.dbt_tugas.test_no_duplicate_order_lines
+[0m14:54:27.897395 [info ] [Thread-1  ]: 6 of 7 START test test_no_duplicate_order_lines ................................ [RUN]
+[0m14:54:27.897752 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e, now test.dbt_tugas.test_no_duplicate_order_lines)
+[0m14:54:27.898040 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.test_no_duplicate_order_lines
+[0m14:54:27.901411 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.test_no_duplicate_order_lines"
+[0m14:54:27.902126 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.test_no_duplicate_order_lines
+[0m14:54:27.904411 [debug] [Thread-1  ]: Writing runtime sql for node "test.dbt_tugas.test_no_duplicate_order_lines"
+[0m14:54:27.904973 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.test_no_duplicate_order_lines"
+[0m14:54:27.905346 [debug] [Thread-1  ]: On test.dbt_tugas.test_no_duplicate_order_lines: BEGIN
+[0m14:54:27.905664 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:27.910849 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:27.911181 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.test_no_duplicate_order_lines"
+[0m14:54:27.911488 [debug] [Thread-1  ]: On test.dbt_tugas.test_no_duplicate_order_lines: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "test.dbt_tugas.test_no_duplicate_order_lines"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select
+    order_id,
+    product_id,
+    count(*) as dup_count
+from "warehouse"."main"."stg_superstore"
+group by 1, 2
+having count(*) > 1
+  
+  
+      
+    ) dbt_internal_test
+[0m14:54:27.921864 [debug] [Thread-1  ]: SQL status: OK in 0.010 seconds
+[0m14:54:27.923284 [debug] [Thread-1  ]: On test.dbt_tugas.test_no_duplicate_order_lines: ROLLBACK
+[0m14:54:27.923703 [debug] [Thread-1  ]: Failed to rollback 'test.dbt_tugas.test_no_duplicate_order_lines'
+[0m14:54:27.924005 [debug] [Thread-1  ]: On test.dbt_tugas.test_no_duplicate_order_lines: Close
+[0m14:54:27.925910 [info ] [Thread-1  ]: 6 of 7 PASS test_no_duplicate_order_lines ...................................... [[32mPASS[0m in 0.03s]
+[0m14:54:27.926431 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.test_no_duplicate_order_lines
+[0m14:54:27.926777 [debug] [Thread-1  ]: Began running node test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed
+[0m14:54:27.927150 [info ] [Thread-1  ]: 7 of 7 START test unique_stg_superstore_row_id ................................. [RUN]
+[0m14:54:27.927553 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.test_no_duplicate_order_lines, now test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed)
+[0m14:54:27.927852 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed
+[0m14:54:27.933374 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed"
+[0m14:54:27.933956 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed
+[0m14:54:27.936138 [debug] [Thread-1  ]: Writing runtime sql for node "test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed"
+[0m14:54:27.936628 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed"
+[0m14:54:27.936908 [debug] [Thread-1  ]: On test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed: BEGIN
+[0m14:54:27.937176 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:54:27.942597 [debug] [Thread-1  ]: SQL status: OK in 0.005 seconds
+[0m14:54:27.942956 [debug] [Thread-1  ]: Using duckdb connection "test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed"
+[0m14:54:27.943273 [debug] [Thread-1  ]: On test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "node_id": "test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    row_id as unique_field,
+    count(*) as n_records
+
+from "warehouse"."main"."stg_superstore"
+where row_id is not null
+group by row_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:54:27.952210 [debug] [Thread-1  ]: SQL status: OK in 0.009 seconds
+[0m14:54:27.953533 [debug] [Thread-1  ]: On test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed: ROLLBACK
+[0m14:54:27.953923 [debug] [Thread-1  ]: Failed to rollback 'test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed'
+[0m14:54:27.954222 [debug] [Thread-1  ]: On test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed: Close
+[0m14:54:27.955532 [info ] [Thread-1  ]: 7 of 7 PASS unique_stg_superstore_row_id ....................................... [[32mPASS[0m in 0.03s]
+[0m14:54:27.956041 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed
+[0m14:54:27.956867 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:54:27.957126 [debug] [MainThread]: On master: BEGIN
+[0m14:54:27.957359 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:54:27.962279 [debug] [MainThread]: SQL status: OK in 0.005 seconds
+[0m14:54:27.962602 [debug] [MainThread]: On master: COMMIT
+[0m14:54:27.962889 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:54:27.963144 [debug] [MainThread]: On master: COMMIT
+[0m14:54:27.963496 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:54:27.963761 [debug] [MainThread]: On master: Close
+[0m14:54:27.964774 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:54:27.965018 [debug] [MainThread]: Connection 'test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed' was properly closed.
+[0m14:54:27.965348 [info ] [MainThread]: 
+[0m14:54:27.965633 [info ] [MainThread]: Finished running 7 data tests in 0 hours 0 minutes and 0.40 seconds (0.40s).
+[0m14:54:27.966746 [debug] [MainThread]: Command end result
+[0m14:54:27.986965 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:54:27.988255 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:54:27.994327 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_project/target/run_results.json
+[0m14:54:27.994624 [info ] [MainThread]: 
+[0m14:54:27.994953 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:54:27.995231 [info ] [MainThread]: 
+[0m14:54:27.995535 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m14:54:27.998248 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 1.3037114, "process_in_blocks": "0", "process_kernel_time": 0.242754, "process_mem_max_rss": "172941312", "process_out_blocks": "0", "process_user_time": 2.013375}
+[0m14:54:27.998647 [debug] [MainThread]: Command `dbt test` succeeded at 14:54:27.998573 after 1.30 seconds
+[0m14:54:27.998996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe570c05eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe570d8bf40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe57082fdc0>]}
+[0m14:54:27.999333 [debug] [MainThread]: Flushing usage events
+[0m14:54:29.085494 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:54:39.866374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fb0205e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fc102da90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fc102d7c0>]}
+
+
+============================== 14:54:39.870231 | ef8b15c1-1e55-484b-8b07-def2a76dc4d5 ==============================
+[0m14:54:39.870231 [info ] [MainThread]: Running with dbt=1.10.23
+[0m14:54:39.870743 [debug] [MainThread]: running dbt with arguments {'profiles_dir': 'dbt_project', 'printer_width': '80', 'no_print': 'None', 'fail_fast': 'False', 'quiet': 'False', 'target_path': 'None', 'log_path': 'dbt_project/logs', 'write_json': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt docs generate --project-dir dbt_project --profiles-dir dbt_project', 'partial_parse': 'True', 'debug': 'False', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'use_experimental_parser': 'False', 'introspect': 'True', 'log_cache_events': 'False', 'use_colors': 'True', 'version_check': 'True', 'static_parser': 'True'}
+[0m14:54:39.871104 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m14:54:39.871525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': 'ef8b15c1-1e55-484b-8b07-def2a76dc4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fb0205e80>]}
+[0m14:54:40.086254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ef8b15c1-1e55-484b-8b07-def2a76dc4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fc0fe2790>]}
+[0m14:54:40.134678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ef8b15c1-1e55-484b-8b07-def2a76dc4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fc10feac0>]}
+[0m14:54:40.136204 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m14:54:40.257342 [debug] [MainThread]: checksum: 2b1352ea083ab2415ad0dbf54db2d1ac6054af1cb939f9d756e37438b9e9a7cf, vars: {}, profile: , target: , version: 1.10.23
+[0m14:54:40.400128 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:54:40.400505 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:54:40.452255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ef8b15c1-1e55-484b-8b07-def2a76dc4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fb0d18f70>]}
+[0m14:54:40.465766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ef8b15c1-1e55-484b-8b07-def2a76dc4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fd0ffbee0>]}
+[0m14:54:40.466194 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 439 macros
+[0m14:54:40.466503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ef8b15c1-1e55-484b-8b07-def2a76dc4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fd0ffbe20>]}
+[0m14:54:40.467851 [info ] [MainThread]: 
+[0m14:54:40.468162 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:54:40.468428 [info ] [MainThread]: 
+[0m14:54:40.468832 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m14:54:40.473213 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse_main'
+[0m14:54:40.519602 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:54:40.519987 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m14:54:40.520262 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:54:40.530472 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m14:54:40.530835 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:54:40.531110 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main'
+    and table_catalog = 'warehouse'
+  
+[0m14:54:40.560699 [debug] [ThreadPool]: SQL status: OK in 0.029 seconds
+[0m14:54:40.562283 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m14:54:40.564424 [debug] [ThreadPool]: Failed to rollback 'list_warehouse_main'
+[0m14:54:40.564782 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m14:54:40.567125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ef8b15c1-1e55-484b-8b07-def2a76dc4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fa0d544f0>]}
+[0m14:54:40.568857 [debug] [Thread-1  ]: Began running node model.dbt_tugas.stg_superstore
+[0m14:54:40.569211 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_warehouse_main, now model.dbt_tugas.stg_superstore)
+[0m14:54:40.569506 [debug] [Thread-1  ]: Began compiling node model.dbt_tugas.stg_superstore
+[0m14:54:40.576858 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_tugas.stg_superstore"
+[0m14:54:40.577406 [debug] [Thread-1  ]: Began executing node model.dbt_tugas.stg_superstore
+[0m14:54:40.577968 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.stg_superstore
+[0m14:54:40.579117 [debug] [Thread-1  ]: Began running node model.dbt_tugas.mart_daily_sales
+[0m14:54:40.579448 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_tugas.stg_superstore, now model.dbt_tugas.mart_daily_sales)
+[0m14:54:40.579750 [debug] [Thread-1  ]: Began compiling node model.dbt_tugas.mart_daily_sales
+[0m14:54:40.611411 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_tugas.mart_daily_sales"
+[0m14:54:40.612106 [debug] [Thread-1  ]: Began executing node model.dbt_tugas.mart_daily_sales
+[0m14:54:40.612744 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.mart_daily_sales
+[0m14:54:40.613091 [debug] [Thread-1  ]: Began running node model.dbt_tugas.mart_region_sales
+[0m14:54:40.613536 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_tugas.mart_daily_sales, now model.dbt_tugas.mart_region_sales)
+[0m14:54:40.613897 [debug] [Thread-1  ]: Began compiling node model.dbt_tugas.mart_region_sales
+[0m14:54:40.616202 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_tugas.mart_region_sales"
+[0m14:54:40.616698 [debug] [Thread-1  ]: Began executing node model.dbt_tugas.mart_region_sales
+[0m14:54:40.617240 [debug] [Thread-1  ]: Finished running node model.dbt_tugas.mart_region_sales
+[0m14:54:40.617558 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba
+[0m14:54:40.617903 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_tugas.mart_region_sales, now test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba)
+[0m14:54:40.618233 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba
+[0m14:54:40.627948 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba"
+[0m14:54:40.628491 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba
+[0m14:54:40.629026 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba
+[0m14:54:40.629370 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b
+[0m14:54:40.629740 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_stg_superstore_order_date.cfd79be3ba, now test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b)
+[0m14:54:40.630039 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b
+[0m14:54:40.633257 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b"
+[0m14:54:40.633733 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b
+[0m14:54:40.634243 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b
+[0m14:54:40.634560 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e
+[0m14:54:40.634888 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_stg_superstore_order_id.ebbb90b34b, now test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e)
+[0m14:54:40.635181 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e
+[0m14:54:40.638313 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e"
+[0m14:54:40.638755 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e
+[0m14:54:40.639345 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e
+[0m14:54:40.639676 [debug] [Thread-1  ]: Began running node test.dbt_tugas.test_no_duplicate_order_lines
+[0m14:54:40.640018 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_stg_superstore_row_id.a028666c6e, now test.dbt_tugas.test_no_duplicate_order_lines)
+[0m14:54:40.640316 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.test_no_duplicate_order_lines
+[0m14:54:40.642587 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.test_no_duplicate_order_lines"
+[0m14:54:40.643055 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.test_no_duplicate_order_lines
+[0m14:54:40.643587 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.test_no_duplicate_order_lines
+[0m14:54:40.643911 [debug] [Thread-1  ]: Began running node test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed
+[0m14:54:40.644245 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.test_no_duplicate_order_lines, now test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed)
+[0m14:54:40.644535 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed
+[0m14:54:40.650176 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed"
+[0m14:54:40.650648 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed
+[0m14:54:40.651161 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed
+[0m14:54:40.651475 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5
+[0m14:54:40.651804 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.unique_stg_superstore_row_id.52fbdc42ed, now test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5)
+[0m14:54:40.652095 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5
+[0m14:54:40.655268 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5"
+[0m14:54:40.655775 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5
+[0m14:54:40.656298 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5
+[0m14:54:40.656623 [debug] [Thread-1  ]: Began running node test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1
+[0m14:54:40.656971 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_tugas.not_null_mart_daily_sales_order_date.0e908a3de5, now test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1)
+[0m14:54:40.657302 [debug] [Thread-1  ]: Began compiling node test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1
+[0m14:54:40.660540 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1"
+[0m14:54:40.661007 [debug] [Thread-1  ]: Began executing node test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1
+[0m14:54:40.661542 [debug] [Thread-1  ]: Finished running node test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1
+[0m14:54:40.662150 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:54:40.662445 [debug] [MainThread]: Connection 'test.dbt_tugas.not_null_mart_region_sales_region.effd3a8ab1' was properly closed.
+[0m14:54:40.663887 [debug] [MainThread]: Command end result
+[0m14:54:40.758593 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:54:40.760119 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:54:40.765976 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_project/target/run_results.json
+[0m14:54:40.770338 [debug] [MainThread]: Acquiring new duckdb connection 'generate_catalog'
+[0m14:54:40.770613 [info ] [MainThread]: Building catalog
+[0m14:54:40.778489 [debug] [ThreadPool]: Acquiring new duckdb connection 'warehouse.information_schema'
+[0m14:54:40.784390 [debug] [ThreadPool]: Using duckdb connection "warehouse.information_schema"
+[0m14:54:40.784678 [debug] [ThreadPool]: On warehouse.information_schema: BEGIN
+[0m14:54:40.784920 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:54:40.790290 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m14:54:40.790590 [debug] [ThreadPool]: Using duckdb connection "warehouse.information_schema"
+[0m14:54:40.790891 [debug] [ThreadPool]: On warehouse.information_schema: /* {"app": "dbt", "dbt_version": "1.10.23", "profile_name": "dbt_tugas", "target_name": "dev", "connection_name": "warehouse.information_schema"} */
+with relations AS (
+      select
+        t.table_name
+        , t.database_name
+        , t.schema_name
+        , 'BASE TABLE' as table_type
+        , t.comment as table_comment
+      from duckdb_tables() t
+      WHERE t.database_name = 'warehouse'
+      UNION ALL
+      SELECT v.view_name as table_name
+      , v.database_name
+      , v.schema_name
+      , 'VIEW' as table_type
+      , v.comment as table_comment
+      from duckdb_views() v
+      WHERE v.database_name = 'warehouse'
+    )
+    select
+        'warehouse' as table_database,
+        r.schema_name as table_schema,
+        r.table_name,
+        r.table_type,
+        r.table_comment,
+        c.column_name,
+        c.column_index as column_index,
+        c.data_type as column_type,
+        c.comment as column_comment,
+        '' as table_owner
+    FROM relations r JOIN duckdb_columns() c ON r.schema_name = c.schema_name AND r.table_name = c.table_name
+    WHERE (upper(r.schema_name) = upper('main') or upper(r.schema_name) = upper('raw'))
+    ORDER BY
+        r.schema_name,
+        r.table_name,
+        c.column_index
+[0m14:54:40.824028 [debug] [ThreadPool]: SQL status: OK in 0.033 seconds
+[0m14:54:40.839956 [debug] [ThreadPool]: On warehouse.information_schema: ROLLBACK
+[0m14:54:40.840322 [debug] [ThreadPool]: Failed to rollback 'warehouse.information_schema'
+[0m14:54:40.840579 [debug] [ThreadPool]: On warehouse.information_schema: Close
+[0m14:54:40.865000 [debug] [MainThread]: Wrote artifact CatalogArtifact to dbt_project/target/catalog.json
+[0m14:54:40.884932 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:54:40.886246 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:54:40.886550 [info ] [MainThread]: Catalog written to /Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/dbt_project/target/catalog.json
+[0m14:54:40.889098 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 1.0993527, "process_in_blocks": "0", "process_kernel_time": 0.189563, "process_mem_max_rss": "143626240", "process_out_blocks": "0", "process_user_time": 1.922429}
+[0m14:54:40.889503 [debug] [MainThread]: Command `dbt docs generate` succeeded at 14:54:40.889431 after 1.10 seconds
+[0m14:54:40.889781 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m14:54:40.890012 [debug] [MainThread]: Connection 'warehouse.information_schema' was properly closed.
+[0m14:54:40.890279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fb0205e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fc14c0880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9fc10feac0>]}
+[0m14:54:40.890598 [debug] [MainThread]: Flushing usage events
+[0m14:54:41.998420 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:57:01.849594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0b1bddee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0901484f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0901487c0>]}
+
+
+============================== 14:57:01.855120 | b923dafb-7e4c-40b6-9383-f96acbb520e5 ==============================
+[0m14:57:01.855120 [info ] [MainThread]: Running with dbt=1.10.23
+[0m14:57:01.855647 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'target_path': 'None', 'use_colors': 'True', 'quiet': 'False', 'profiles_dir': 'dbt_project', 'static_parser': 'True', 'empty': 'None', 'version_check': 'True', 'partial_parse': 'True', 'debug': 'False', 'invocation_command': 'dbt ls --project-dir dbt_project --profiles-dir dbt_project', 'use_experimental_parser': 'False', 'no_print': 'None', 'introspect': 'True', 'log_cache_events': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_path': 'dbt_project/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'write_json': 'True'}
+[0m14:57:01.856010 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m14:57:01.856317 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': 'b923dafb-7e4c-40b6-9383-f96acbb520e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0b1bddee0>]}
+[0m14:57:02.179135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b923dafb-7e4c-40b6-9383-f96acbb520e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa09012acd0>]}
+[0m14:57:02.226580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b923dafb-7e4c-40b6-9383-f96acbb520e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0a012f7f0>]}
+[0m14:57:02.228310 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m14:57:02.326020 [debug] [MainThread]: checksum: 2b1352ea083ab2415ad0dbf54db2d1ac6054af1cb939f9d756e37438b9e9a7cf, vars: {}, profile: , target: , version: 1.10.23
+[0m14:57:02.472247 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:57:02.472596 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:57:02.526069 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b923dafb-7e4c-40b6-9383-f96acbb520e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0b2c42130>]}
+[0m14:57:02.624283 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project/target/manifest.json
+[0m14:57:02.626099 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project/target/semantic_manifest.json
+[0m14:57:02.637412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b923dafb-7e4c-40b6-9383-f96acbb520e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0a01ad340>]}
+[0m14:57:02.637841 [info ] [MainThread]: Found 3 models, 7 data tests, 1 source, 439 macros
+[0m14:57:02.638147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b923dafb-7e4c-40b6-9383-f96acbb520e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0b2c33670>]}
+[0m14:57:02.638859 [info ] [MainThread]: dbt_tugas.marts.mart_daily_sales
+[0m14:57:02.639146 [info ] [MainThread]: dbt_tugas.marts.mart_region_sales
+[0m14:57:02.639394 [info ] [MainThread]: dbt_tugas.staging.stg_superstore
+[0m14:57:02.639633 [info ] [MainThread]: source:dbt_tugas.raw.superstore
+[0m14:57:02.639875 [info ] [MainThread]: dbt_tugas.marts.not_null_mart_daily_sales_order_date
+[0m14:57:02.640116 [info ] [MainThread]: dbt_tugas.marts.not_null_mart_region_sales_region
+[0m14:57:02.640350 [info ] [MainThread]: dbt_tugas.staging.not_null_stg_superstore_order_date
+[0m14:57:02.640583 [info ] [MainThread]: dbt_tugas.staging.not_null_stg_superstore_order_id
+[0m14:57:02.640813 [info ] [MainThread]: dbt_tugas.staging.not_null_stg_superstore_row_id
+[0m14:57:02.641048 [info ] [MainThread]: dbt_tugas.test_no_duplicate_order_lines
+[0m14:57:02.641280 [info ] [MainThread]: dbt_tugas.staging.unique_stg_superstore_row_id
+[0m14:57:02.643734 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 0.8738943, "process_in_blocks": "0", "process_kernel_time": 0.191043, "process_mem_max_rss": "122388480", "process_out_blocks": "0", "process_user_time": 1.61285}
+[0m14:57:02.644457 [debug] [MainThread]: Command `dbt ls` succeeded at 14:57:02.644096 after 0.87 seconds
+[0m14:57:02.644849 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0b1bddee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0a012f7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa0b16fa280>]}
+[0m14:57:02.645206 [debug] [MainThread]: Flushing usage events
+[0m14:57:03.928931 [debug] [MainThread]: An error was encountered while trying to flush usage events

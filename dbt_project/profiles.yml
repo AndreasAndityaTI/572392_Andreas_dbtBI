@@ -1,0 +1,7 @@
+dbt_tugas:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "/Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/data/warehouse.duckdb"
+      threads: 1

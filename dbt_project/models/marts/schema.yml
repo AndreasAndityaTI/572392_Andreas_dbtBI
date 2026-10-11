@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: mart_daily_sales
+    description: "Daily transaction summary for business monitoring and KPI tracking."
+    columns:
+      - name: order_date
+        description: "The transaction date for the daily rollup."
+        tests:
+          - not_null
+      - name: order_count
+        description: "Unique number of orders placed on the date."
+      - name: total_sales
+        description: "Total gross sales for the date."
+      - name: total_profit
+        description: "Total profit generated for the date."
+      - name: total_quantity
+        description: "Total quantity sold on the date."
+      - name: avg_discount
+        description: "Average discount applied on the date."
+
+  - name: mart_region_sales
+    description: "Regional sales summary used for dashboard filtering and performance comparison."
+    columns:
+      - name: region
+        description: "Sales region."
+        tests:
+          - not_null
+      - name: total_sales
+        description: "Total revenue in the region."
+      - name: total_profit
+        description: "Total profit in the region."
+      - name: order_count
+        description: "Unique number of orders in the region."

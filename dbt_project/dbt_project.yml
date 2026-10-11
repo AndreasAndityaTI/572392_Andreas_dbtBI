@@ -1,0 +1,24 @@
+name: "dbt_tugas"
+version: "1.0.0"
+config-version: 2
+
+profile: "dbt_tugas"
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_tugas:
+    +materialized: table
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

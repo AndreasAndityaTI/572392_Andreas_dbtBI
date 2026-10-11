@@ -1,0 +1,55 @@
+version: 2
+
+sources:
+  - name: raw
+    database: warehouse
+    schema: raw
+    description: "Raw Superstore dataset loaded into DuckDB from the Airflow pipeline."
+    tables:
+      - name: superstore
+        description: "Raw transactional sales dataset for Sample Superstore."
+        columns:
+          - name: "Row ID"
+            description: "Unique row identifier from source data."
+          - name: "Order ID"
+            description: "Unique identifier for each order."
+          - name: "Order Date"
+            description: "Date when the order was placed."
+          - name: "Ship Date"
+            description: "Date when the order was shipped."
+          - name: "Customer ID"
+            description: "Customer identifier."
+          - name: "Product ID"
+            description: "Product identifier."
+          - name: "Sales"
+            description: "Sales value in USD."
+          - name: "Profit"
+            description: "Profit value in USD."
+
+models:
+  - name: stg_superstore
+    description: "Cleaned and deduplicated Superstore sales data ready for dimensional aggregation."
+    columns:
+      - name: row_id
+        description: "Source row identifier."
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Order identifier used to group the sales transaction."
+        tests:
+          - not_null
+      - name: order_date
+        description: "Transaction date normalized to a valid DATE value."
+        tests:
+          - not_null
+      - name: region
+        description: "Sales region associated with the order."
+      - name: category
+        description: "Product category such as Furniture, Office Supplies, or Technology."
+      - name: sales
+        description: "Sales value in USD after type conversion."
+      - name: profit
+        description: "Profit value in USD after type conversion."
+      - name: order_product_key
+        description: "Natural key that identifies each order line item."

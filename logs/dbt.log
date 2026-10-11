@@ -1,0 +1,59 @@
+[0m14:52:06.164102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fda29a45eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fda080df340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fda080df670>]}
+
+
+============================== 14:52:06.168554 | b4049162-ecd4-468a-a332-f0f6b788cc61 ==============================
+[0m14:52:06.168554 [info ] [MainThread]: Running with dbt=1.10.23
+[0m14:52:06.170315 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'no_print': 'None', 'invocation_command': 'dbt debug --profiles-dir dbt_project', 'profiles_dir': 'dbt_project', 'printer_width': '80', 'log_cache_events': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'version_check': 'True', 'quiet': 'False', 'log_path': 'logs', 'indirect_selection': 'eager', 'write_json': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False'}
+[0m14:52:06.170688 [info ] [MainThread]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. We recommend upgrading to a newer supported version of dbt: https://docs.getdbt.com/docs/dbt-versions
+[0m14:52:06.171000 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': 'b4049162-ecd4-468a-a332-f0f6b788cc61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fda29a45eb0>]}
+[0m14:52:06.181321 [info ] [MainThread]: dbt version: 1.10.23
+[0m14:52:06.181675 [info ] [MainThread]: python version: 3.9.0
+[0m14:52:06.181951 [info ] [MainThread]: python path: /Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/.venv/bin/python
+[0m14:52:06.182215 [info ] [MainThread]: os info: macOS-10.16-x86_64-i386-64bit
+[0m14:52:09.636214 [info ] [MainThread]: Using profiles dir at dbt_project
+[0m14:52:09.636727 [info ] [MainThread]: Using profiles.yml file at dbt_project/profiles.yml
+[0m14:52:09.637021 [info ] [MainThread]: Using dbt_project.yml file at /Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/dbt_project.yml
+[0m14:52:09.639095 [info ] [MainThread]: adapter type: duckdb
+[0m14:52:09.639405 [info ] [MainThread]: adapter version: 1.8.3
+[0m14:52:09.639676 [info ] [MainThread]: Configuration:
+[0m14:52:09.639932 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:52:09.640182 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:52:09.640426 [info ] [MainThread]: Required dependencies:
+[0m14:52:09.640739 [debug] [MainThread]: Executing "git --help"
+[0m14:52:09.661300 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:52:09.662157 [debug] [MainThread]: STDERR: "b''"
+[0m14:52:09.662487 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:52:09.662792 [info ] [MainThread]: Connection:
+[0m14:52:09.663124 [info ] [MainThread]:   database: warehouse
+[0m14:52:09.663382 [info ] [MainThread]:   schema: main
+[0m14:52:09.663628 [info ] [MainThread]:   path: /Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/data/warehouse.duckdb
+[0m14:52:09.663886 [info ] [MainThread]:   config_options: None
+[0m14:52:09.664125 [info ] [MainThread]:   extensions: None
+[0m14:52:09.664361 [info ] [MainThread]:   settings: {}
+[0m14:52:09.664598 [info ] [MainThread]:   external_root: .
+[0m14:52:09.664835 [info ] [MainThread]:   use_credential_provider: None
+[0m14:52:09.665078 [info ] [MainThread]:   attach: None
+[0m14:52:09.665313 [info ] [MainThread]:   filesystems: None
+[0m14:52:09.665547 [info ] [MainThread]:   remote: None
+[0m14:52:09.665783 [info ] [MainThread]:   plugins: None
+[0m14:52:09.666020 [info ] [MainThread]:   disable_transactions: False
+[0m14:52:09.666605 [info ] [MainThread]: Registered adapter: duckdb=1.8.3
+[0m14:52:09.895148 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m14:52:09.931484 [debug] [MainThread]: Using duckdb connection "debug"
+[0m14:52:09.931826 [debug] [MainThread]: On debug: select 1 as id
+[0m14:52:09.932099 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:52:09.944909 [debug] [MainThread]: SQL status: OK in 0.013 seconds
+[0m14:52:09.945700 [debug] [MainThread]: On debug: Close
+[0m14:52:09.946855 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:52:09.947201 [info ] [MainThread]: [31m1 check failed:[0m
+[0m14:52:09.947484 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/andreasanditya/Downloads/tugas_airflow-main 2/572392_Andreas_dbtBI/dbt_project.yml> not found
+
+[0m14:52:10.080631 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 4.2501636, "process_in_blocks": "0", "process_kernel_time": 0.223678, "process_mem_max_rss": "106676224", "process_out_blocks": "0", "process_user_time": 1.265686}
+[0m14:52:10.081179 [debug] [MainThread]: Command `dbt debug` failed at 14:52:10.081072 after 4.25 seconds
+[0m14:52:10.081713 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:52:10.082062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fda29a45eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fda2a949d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fda38a9ee80>]}
+[0m14:52:10.082464 [debug] [MainThread]: Flushing usage events
+[0m14:52:11.374493 [debug] [MainThread]: An error was encountered while trying to flush usage events
