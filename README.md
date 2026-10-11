@@ -116,6 +116,4 @@ http://localhost:8000/
 
 Proyek ini menghasilkan dashboard yang menampilkan performa bisnis secara ringkas dan mudah dibaca. Data yang ditampilkan sudah berasal dari proses ETL + dbt sebelumnya, bukan data dummy.
 
-## Catatan
 
-README ini adalah satu-satunya dokumentasi utama untuk proyek ini. Semua penjelasan utama dan cara menjalankan proyek ada di file ini.
